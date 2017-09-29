@@ -38,7 +38,7 @@ namespace Week1Project_JH
                     Console.WriteLine("I = Indigo");
                     Console.WriteLine("V = Violet");
                     break;
-                
+
                 case "red":
                     favColor = "red";
                     break;
@@ -65,10 +65,82 @@ namespace Week1Project_JH
             Console.WriteLine("How many siblings do you have? (Number, not word)");
             int siblingNum = int.Parse(Console.ReadLine());
 
+            int retireTime = (userAge % 2);
 
+            if (userAge % 2 == 0)
+            {
+                retireTime = 31;
+            }
+            else if (userAge % 2 == 1)
+            {
+                retireTime = 30;
+            }
 
+            string vacHome = null;
 
+            if (siblingNum == 0)
+            {
+                vacHome = "Place1";
+            }
+            else if (siblingNum == 1)
+            {
+                vacHome = "Place2";
+            }
+            else if (siblingNum == 2)
+            {
+                vacHome = "Place3";
+            }
+            else if (siblingNum == 3)
+            {
+                vacHome = "Place4";
+            }
+            else if (siblingNum > 3)
+            {
+                vacHome = "Place5";
+            }
+            else
+            {
+                vacHome = "Dumpster";
+            }
 
+            string rideType = null;
+            if (favColor == "red")
+            {
+                rideType = "ride1";
+            }
+            else if (favColor == "orange")
+            {
+                rideType = "ride2";
+            }
+            else if (favColor == "yellow")
+            {
+                rideType = "ride3";
+            }
+            else if (favColor == "green")
+            {
+                rideType = "ride4";
+            }
+            else if (favColor == "blue")
+            {
+                rideType = "ride5";
+            }
+            else if (favColor == "indigo")
+            {
+                rideType = "ride6";
+            }
+            else if (favColor == "violet")
+            {
+                rideType = "ride7";
+            }
+            else if (favColor == "Quit")
+            {
+                rideType = "quit";
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+            
 
         }
     }
