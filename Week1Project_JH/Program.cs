@@ -10,7 +10,10 @@ namespace Week1Project_JH
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the fortune teller! You may type \"Quit\" at any time to quit.\nPlease enter your first name:");
+            //Basic Questions
+
+            Console.WriteLine("Welcome to the fortune teller! First, I need to gather some information...");
+            Console.WriteLine("Please enter your first name:");
             string firstName = Console.ReadLine();
 
             Console.WriteLine("Please enter your last name:");
@@ -24,11 +27,12 @@ namespace Week1Project_JH
 
             Console.WriteLine("Please enter your favorite ROYGBIV color. If you need help here, please type \"Help\" without quotes.");
             string colorAnswer = Console.ReadLine().ToLower();
-            string favColor = colorAnswer;
+            
+            //Rainbow Color case
 
             switch (colorAnswer)
             {
-                case "Help":
+                case "help":
                     Console.WriteLine("ROYGBIV correlates to the colors of the rainbow.");
                     Console.WriteLine("R = Red");
                     Console.WriteLine("O = Orange");
@@ -38,29 +42,38 @@ namespace Week1Project_JH
                     Console.WriteLine("I = Indigo");
                     Console.WriteLine("V = Violet");
                     break;
-
                 case "red":
-                    favColor = "red";
+                    colorAnswer = "red";
                     break;
                 case "orange":
-                    favColor = "orange";
+                    colorAnswer = "orange";
                     break;
                 case "yellow":
-                    favColor = "yellow";
+                    colorAnswer = "yellow";
                     break;
                 case "green":
-                    favColor = "green";
+                    colorAnswer = "green";
+                    break;
+                case "blue":
+                    colorAnswer = "blue";
                     break;
                 case "indigo":
-                    favColor = "indigo";
+                    colorAnswer = "indigo";
                     break;
                 case "violet":
-                    favColor = "violet";
+                    colorAnswer = "violet";
                     break;
                 default:
                     Console.WriteLine("You entered an invalid color.");
                     break;
             }
+            if (colorAnswer == "help")
+            {
+                Console.WriteLine("Now please enter your favorite color");
+                colorAnswer = Console.ReadLine().ToLower();
+            }
+                
+            //Sibling Count
 
             Console.WriteLine("How many siblings do you have? (Number, not word)");
             int siblingNum = int.Parse(Console.ReadLine());
@@ -75,6 +88,9 @@ namespace Week1Project_JH
             {
                 retireTime = 30;
             }
+
+
+            //Vacation Home
 
             string vacHome = null;
 
@@ -103,45 +119,69 @@ namespace Week1Project_JH
                 vacHome = "Dumpster";
             }
 
+            //Modes of Transportation
+
             string rideType = null;
-            if (favColor == "red")
+            if (colorAnswer == "red")
             {
                 rideType = "ride1";
             }
-            else if (favColor == "orange")
+            else if (colorAnswer == "orange")
             {
                 rideType = "ride2";
             }
-            else if (favColor == "yellow")
+            else if (colorAnswer == "yellow")
             {
                 rideType = "ride3";
             }
-            else if (favColor == "green")
+            else if (colorAnswer == "green")
             {
                 rideType = "ride4";
             }
-            else if (favColor == "blue")
+            else if (colorAnswer == "blue")
             {
                 rideType = "ride5";
             }
-            else if (favColor == "indigo")
+            else if (colorAnswer == "indigo")
             {
                 rideType = "ride6";
             }
-            else if (favColor == "violet")
+            else if (colorAnswer == "violet")
             {
                 rideType = "ride7";
             }
-            else if (favColor == "Quit")
+            else if (colorAnswer == "Quit")
             {
                 rideType = "quit";
             }
             else
             {
-                Console.WriteLine("error");
+                Console.WriteLine("Error");
             }
-            
 
+            //Money in the bank based on birth month
+
+            int bankMoney = userBirthMonth;
+            if (userBirthMonth > 0 && userBirthMonth <= 4) 
+            {
+                bankMoney = 1000000;
+            }
+            else if (userBirthMonth > 4 && userBirthMonth <= 8) 
+            {
+                bankMoney = 500000;
+            }
+            else if (userBirthMonth > 8 && userBirthMonth <= 12) 
+            {
+                bankMoney = 250000;
+            }
+            else
+            {
+                bankMoney = 0;
+            }
+
+            Console.WriteLine("Your fortune has been read! Here are the results...");
+            Console.WriteLine(firstName + " " + lastName + " " + "will retire in " + retireTime + " years with $" + bankMoney + " in the bank,\n a vacation home in " + vacHome + " and a " + rideType + " to get around.");
+            
         }
     }
 }
