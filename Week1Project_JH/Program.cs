@@ -96,23 +96,23 @@ namespace Week1Project_JH
 
             if (siblingNum == 0)
             {
-                vacHome = "Place1";
+                vacHome = "Hawaii";
             }
             else if (siblingNum == 1)
             {
-                vacHome = "Place2";
+                vacHome = "Florida";
             }
             else if (siblingNum == 2)
             {
-                vacHome = "Place3";
+                vacHome = "Thailand";
             }
             else if (siblingNum == 3)
             {
-                vacHome = "Place4";
+                vacHome = "Paris";
             }
             else if (siblingNum > 3)
             {
-                vacHome = "Place5";
+                vacHome = "Greece";
             }
             else
             {
@@ -124,39 +124,35 @@ namespace Week1Project_JH
             string rideType = null;
             if (colorAnswer == "red")
             {
-                rideType = "ride1";
+                rideType = "jetpack";
             }
             else if (colorAnswer == "orange")
             {
-                rideType = "ride2";
+                rideType = "personal helicopter";
             }
             else if (colorAnswer == "yellow")
             {
-                rideType = "ride3";
+                rideType = "sports car";
             }
             else if (colorAnswer == "green")
             {
-                rideType = "ride4";
+                rideType = "speedboat";
             }
             else if (colorAnswer == "blue")
             {
-                rideType = "ride5";
+                rideType = "motorcycle";
             }
             else if (colorAnswer == "indigo")
             {
-                rideType = "ride6";
+                rideType = "segway";
             }
             else if (colorAnswer == "violet")
             {
-                rideType = "ride7";
-            }
-            else if (colorAnswer == "Quit")
-            {
-                rideType = "quit";
+                rideType = "submarine";
             }
             else
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("You entered an invalid color.");
             }
 
             //Money in the bank based on birth month
@@ -182,6 +178,9 @@ namespace Week1Project_JH
             Console.WriteLine("Your fortune has been read! Here are the results...");
             Console.WriteLine(firstName + " " + lastName + " " + "will retire in " + retireTime + " years with $" + bankMoney + " in the bank,\n a vacation home in " + vacHome + " and a " + rideType + " to get around.");
             
+            //As a side note, I inadvertantly gave myself the best vacation home/ride. The rest was intentional, but it was a
+            //fairly funny thing to see when I put in my personal info.
+            //Your mileage may vary.
         }
     }
 }
